@@ -1,0 +1,7 @@
+body { font-family: system-ui, Arial; margin:0; }
+.app header { padding:12px; background:#0b5; display:flex; justify-content:space-between; align-items:center; }
+.workspace { display:flex; height:calc(100vh - 60px); }
+.palette { width:200px; background:#f4f4f4; padding:12px; }
+.palette-item { background:white; border:1px solid #ddd; padding:8px; margin-bottom:8px; cursor:grab; }
+.canvas { flex:1; position:relative; background:linear-gradient(90deg,#fff,#f9f9f9); }
+.comp { background:rgba(0,0,0,0.05); padding:8px; border-radius:4px; }
