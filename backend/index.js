@@ -7,7 +7,7 @@
 
 const express = require('express');
 const axios = require('axios');
-const csvParse = require('csv-parse/lib/sync');
+const { parse } = require('csv-parse/sync');
 
 const app = express();
 app.use(express.json());
@@ -20,7 +20,7 @@ app.get('/api/sheets', async (req, res) => {
     const resp = await axios.get(decodeURIComponent(csvUrl));
     const csvText = resp.data;
     // parse CSV to records (first row = header)
-    const records = csvParse(csvText, { columns: true, skip_empty_lines: true });
+    const records = parse(csvText, { columns: true, skip_empty_lines: true });
     res.json({ rows: records });
   } catch (err) {
     console.error(err?.message || err);
